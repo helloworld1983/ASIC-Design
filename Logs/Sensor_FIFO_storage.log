@@ -1,0 +1,234 @@
+Synthesizing design: Sensor_FIFO_storage.sv
+dc_shell-t -x "source -echo do_mapping.tcl"
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# Step 1:  Read in the source file
+analyze -format sverilog -lib WORK {flex_counter.sv Sensor_FIFO_storage.sv}
+Running PRESTO HDLC
+Compiling source file ./source/flex_counter.sv
+Compiling source file ./source/Sensor_FIFO_storage.sv
+Presto compilation completed successfully.
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/dw_foundation.sldb'
+elaborate Sensor_FIFO_storage -lib WORK
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine Sensor_FIFO_storage line 55 in file
+		'./source/Sensor_FIFO_storage.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |  256  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==================================================================
+|    block name/line      | Inputs | Outputs | # sel inputs | MB |
+==================================================================
+| Sensor_FIFO_storage/106 |   8    |   32    |      3       | N  |
+==================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'Sensor_FIFO_storage'.
+Information: Building the design 'flex_counter' instantiated from design 'Sensor_FIFO_storage' with
+	the parameters "4". (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter_NUM_CNT_BITS4 line 31 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    count_out_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+uniquify
+Information: Uniquified 2 instances of design 'flex_counter_NUM_CNT_BITS4'. (OPT-1056)
+# Step 2: Set design constraints
+# Uncomment below to set timing, area, power, etc. constraints
+# set_max_delay <delay> -from "<input>" -to "<output>"
+# set_max_area <area>
+# set_max_total_power <power> mW
+# Step 3: Compile the design
+compile -map_effort medium
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.1 |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.1 |     *     |
+============================================================================
+
+
+Information: There are 13 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'flex_counter_NUM_CNT_BITS4_0'
+  Processing 'Sensor_FIFO_storage'
+Information: Added key list 'DesignWare' to design 'Sensor_FIFO_storage'. (DDB-72)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'Sensor_FIFO_storage' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'Sensor_FIFO_storage_DW01_inc_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'flex_counter_NUM_CNT_BITS4_0'
+  Mapping 'flex_counter_NUM_CNT_BITS4_0'
+  Structuring 'flex_counter_NUM_CNT_BITS4_1'
+  Mapping 'flex_counter_NUM_CNT_BITS4_1'
+  Structuring 'Sensor_FIFO_storage'
+  Mapping 'Sensor_FIFO_storage'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:01  504072.0      0.00       0.0      11.7                          
+    0:00:02  505152.0      0.00       0.0       8.2                          
+    0:00:02  505872.0      0.00       0.0       5.4                          
+    0:00:02  506592.0      0.00       0.0       2.7                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507312.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+    0:00:02  507024.0      0.00       0.0       0.0                          
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+# Step 4: Output reports
+report_timing -path full -delay max -max_paths 1 -nworst 1 > reports/Sensor_FIFO_storage.rep
+report_area >> reports/Sensor_FIFO_storage.rep
+report_power -hier >> reports/Sensor_FIFO_storage.rep
+# Step 5: Output final VHDL and Verilog files
+write_file -format verilog -hierarchy -output "mapped/Sensor_FIFO_storage.v"
+Writing verilog file '/home/ecegrid/a/mg43/ece337/ECE337_Project/mapped/Sensor_FIFO_storage.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+echo "\nScript Done\n"
+
+Script Done
+
+echo "\nChecking Design\n"
+
+Checking Design
+
+check_design
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP1
+Date:        Wed Dec 13 16:46:36 2017
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                              10
+    Connected to power or ground (LINT-32)                          8
+    Nets connected to multiple pins on same cell (LINT-33)          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'READ_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 1. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', a pin on submodule 'WRITE_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 0. 
+Warning: In design 'Sensor_FIFO_storage', the same net is connected to more than one pin on submodule 'READ_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'Sensor_FIFO_storage', the same net is connected to more than one pin on submodule 'WRITE_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+quit
+
+Thank you...
+Done
+
+
